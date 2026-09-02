@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/My_Portfolio/',
   plugins: [react()],
   build: {
     chunkSizeWarningLimit: 1200,
@@ -12,9 +13,11 @@ export default defineConfig({
           if (id.includes('node_modules/three/')) {
             return 'three';
           }
+
           if (id.includes('node_modules/@react-three/')) {
             return 'react-three';
           }
+
           if (id.includes('node_modules/framer-motion/')) {
             return 'motion';
           }
