@@ -30,24 +30,50 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setStatus("submitting");
 
-    // Simulate reliable dispatch
-    setTimeout(() => {
-      setStatus("success");
-      confetti({
-        particleCount: 80,
-        spread: 70,
-        origin: { y: 0.7 },
-        colors: ["#06b6d4", "#8b5cf6", "#10b981", "#ffffff"],
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          // TODO: Replace with your actual Web3Forms Access Key
+          access_key: "YOUR_ACCESS_KEY_HERE", 
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus("idle"), 6000);
-    }, 1200);
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setStatus("success");
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.7 },
+          colors: ["#06b6d4", "#8b5cf6", "#10b981", "#ffffff"],
+        });
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 6000);
+      } else {
+        console.error("Submission error:", result);
+        setStatus("idle"); // or handle error state
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      setStatus("idle");
+      alert("Network error. Please try again.");
+    }
   };
 
   const copyEmail = () => {
