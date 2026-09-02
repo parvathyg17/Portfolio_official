@@ -45,7 +45,7 @@ export default function Contact() {
         },
         body: JSON.stringify({
           // TODO: Replace with your actual Web3Forms Access Key
-          access_key: "YOUR_ACCESS_KEY_HERE", 
+          access_key: "8ba4aa90-94e3-4dfd-be1f-7c7ecc8e221e",
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -53,7 +53,7 @@ export default function Contact() {
       });
 
       const result = await response.json();
-      
+
       if (result.success) {
         setStatus("success");
         confetti({
