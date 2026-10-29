@@ -9,7 +9,6 @@ import {
   Copy,
   Check,
   ArrowUpRight,
-  MessageSquare,
   Code
 } from "lucide-react";
 import { Github, Linkedin } from "./Icons";
@@ -117,7 +116,7 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="mt-3 max-w-2xl text-slate-400 text-sm sm:text-base"
           >
-            Whether you have an open engineering position, need a scalable backend system, or want to explore architectural collaboration, my inbox is open.
+            I'm open to opportunities in Python development, backend engineering, and full-stack development. Feel free to get in touch.
           </motion.p>
         </div>
 

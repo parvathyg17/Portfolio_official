@@ -1,7 +1,7 @@
 import React, { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { Float, Html } from "@react-three/drei";
+import { Float } from "@react-three/drei";
 
 export default function LaptopModel({ mouse }) {
   const groupRef = useRef();
@@ -53,7 +53,7 @@ export default function LaptopModel({ mouse }) {
       { num: "05", text: "class FullStackArchitect:", color: "#38bdf8" },
       { num: "06", text: "    def __init__(self, name: str = 'Parvathi G'):", color: "#f1f5f9" },
       { num: "07", text: "        self.role: Final = 'Python & Full Stack Dev'", color: "#67e8f9" },
-      { num: "08", text: "        self.stack = ['Django', 'React', 'Spring Boot', 'Postgres']", color: "#34d399" },
+      { num: "08", text: "        self.stack = ['Python', 'Django', 'React', 'Postgres']", color: "#34d399" },
       { num: "09", text: "        self.status = 'Ready for Next-Gen Scale'", color: "#fbbf24" },
       { num: "10", text: "", color: "#64748b" },
       { num: "11", text: "    async def build_robust_backend(self, req):", color: "#38bdf8" },

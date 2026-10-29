@@ -5,10 +5,8 @@ import {
   Sparkles,
   Layers,
   ArrowRight,
-  ShieldCheck,
   ShoppingBag,
   HeartPulse,
-  MessageSquare,
   CheckCircle2
 } from "lucide-react";
 import { Github } from "./Icons";
@@ -18,7 +16,6 @@ import ProjectModal from "./ProjectModal";
 const projectIcons = {
   furnicart: ShoppingBag,
   medq: HeartPulse,
-  feedu: MessageSquare,
 };
 
 // Interactive 3D Tilt Card using mouse coordinates
@@ -124,10 +121,10 @@ function TiltProjectCard({ project, onSelectProject }) {
 
         {/* Key Features Quick Peek */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
-          {project.features.slice(0, 4).map((feat, i) => (
+          {(project.featured ? project.features.slice(0, 6) : project.features.slice(0, 4)).map((feat, i) => (
             <div
               key={i}
-              className="flex items-center gap-2 text-xs text-slate-300 bg-white/[0.02] p-2 rounded-lg border border-white/5"
+              className="flex items-center gap-2 text-xs text-slate-300 bg-white/[0.02] p-2.5 rounded-xl border border-white/5"
             >
               <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
               <span className="truncate">{feat}</span>
@@ -153,7 +150,7 @@ function TiltProjectCard({ project, onSelectProject }) {
             onClick={() => onSelectProject(project)}
             className="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors group/btn"
           >
-            <span>Inspect Full Architecture & 9+ Features</span>
+            <span>View Architecture & Full Breakdown</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
           </button>
 
@@ -163,10 +160,25 @@ function TiltProjectCard({ project, onSelectProject }) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`GitHub repo for ${project.title}`}
-                className="p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors"
+                aria-label={`Backend repo for ${project.title}`}
+                title="Backend Source Code"
+                className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 text-xs font-mono"
               >
                 <Github className="w-4 h-4" />
+                <span className="hidden sm:inline">Backend</span>
+              </a>
+            )}
+            {project.frontendGithubUrl && (
+              <a
+                href={project.frontendGithubUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Frontend repo for ${project.title}`}
+                title="Frontend Source Code"
+                className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 text-xs font-mono"
+              >
+                <Github className="w-4 h-4" />
+                <span className="hidden sm:inline">Frontend</span>
               </a>
             )}
             {project.demoUrl && (
@@ -174,7 +186,7 @@ function TiltProjectCard({ project, onSelectProject }) {
                 href={project.demoUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-mono text-xs font-semibold flex items-center gap-1.5 shadow-glow-cyan hover:scale-[1.02] transition-transform"
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-mono text-xs font-semibold flex items-center gap-1.5 shadow-glow-cyan hover:scale-[1.02] transition-transform"
               >
                 <span>Live Demo</span>
                 <ExternalLink className="w-3.5 h-3.5" />

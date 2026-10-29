@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Code2,
-  Coffee,
   FileCode2,
   Atom,
   ShieldAlert,
@@ -17,14 +16,17 @@ import {
   Sparkles,
   Orbit,
   Grid,
-  Check
+  Check,
+  Cpu,
+  Terminal,
+  Server,
+  Layout
 } from "lucide-react";
 import TechScene from "./3d/TechScene";
 import { skills, skillCategories } from "../data/skills";
 
 const iconMap = {
   Code2,
-  Coffee,
   FileCode2,
   Atom,
   ShieldAlert,
@@ -36,6 +38,10 @@ const iconMap = {
   Cloud,
   Box,
   GitBranch,
+  Cpu,
+  Terminal,
+  Server,
+  Layout,
 };
 
 export default function Skills() {
@@ -79,7 +85,7 @@ export default function Skills() {
             transition={{ delay: 0.2 }}
             className="mt-3 max-w-2xl text-slate-400 text-sm sm:text-base"
           >
-            Explore the technologies I leverage to architect end-to-end full-stack applications and high-throughput backend services.
+            Technologies and tools I use to build backend services, manage databases, and develop responsive web applications.
           </motion.p>
         </div>
 

@@ -4,15 +4,15 @@ import { OrbitControls, Html, Float } from "@react-three/drei";
 import * as THREE from "three";
 
 const constellationTechs = [
-  { name: "Python", color: "#38bdf8", category: "Backend / Language", size: 0.35, distance: 2.6, speed: 0.6, angle: 0 },
+  { name: "Python", color: "#38bdf8", category: "Primary Language", size: 0.35, distance: 2.6, speed: 0.6, angle: 0 },
   { name: "Django", color: "#10b981", category: "Web Framework", size: 0.32, distance: 3.1, speed: 0.5, angle: 0.8 },
   { name: "React", color: "#06b6d4", category: "Frontend UI", size: 0.34, distance: 2.7, speed: 0.7, angle: 1.6 },
-  { name: "Java", color: "#f97316", category: "Enterprise Core", size: 0.32, distance: 3.3, speed: 0.45, angle: 2.4 },
-  { name: "Spring Boot", color: "#84cc16", category: "Java Framework", size: 0.3, distance: 3.6, speed: 0.55, angle: 3.2 },
+  { name: "SQL", color: "#0284c7", category: "Relational Queries", size: 0.31, distance: 3.3, speed: 0.45, angle: 2.4 },
+  { name: "Tailwind CSS", color: "#38bdf8", category: "Frontend Styling", size: 0.3, distance: 3.6, speed: 0.55, angle: 3.2 },
   { name: "PostgreSQL", color: "#3b82f6", category: "Relational DB", size: 0.33, distance: 2.9, speed: 0.65, angle: 4.0 },
   { name: "REST APIs", color: "#8b5cf6", category: "API Design", size: 0.28, distance: 3.4, speed: 0.5, angle: 4.8 },
-  { name: "Docker", color: "#0ea5e9", category: "DevOps", size: 0.29, distance: 3.8, speed: 0.4, angle: 5.5 },
-  { name: "AWS", color: "#f59e0b", category: "Cloud Services", size: 0.28, distance: 4.1, speed: 0.35, angle: 1.2 },
+  { name: "Linux", color: "#eab308", category: "System Tools", size: 0.29, distance: 3.8, speed: 0.4, angle: 5.5 },
+  { name: "AWS EC2", color: "#f59e0b", category: "Cloud Hosting", size: 0.28, distance: 4.1, speed: 0.35, angle: 1.2 },
   { name: "JavaScript", color: "#facc15", category: "Frontend / Web", size: 0.3, distance: 3.2, speed: 0.6, angle: 2.8 },
   { name: "Git", color: "#f43f5e", category: "Version Control", size: 0.26, distance: 3.5, speed: 0.5, angle: 3.8 },
   { name: "MySQL", color: "#0284c7", category: "Database", size: 0.27, distance: 4.0, speed: 0.42, angle: 4.6 },

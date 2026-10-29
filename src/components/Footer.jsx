@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUp, Terminal, Heart, Mail, Sparkles } from "lucide-react";
+import { ArrowUp, Terminal, Mail } from "lucide-react";
 import { Github, Linkedin } from "./Icons";
 import { personalInfo } from "../data/personal";
 

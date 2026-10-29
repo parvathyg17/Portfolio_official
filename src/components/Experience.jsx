@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Calendar, MapPin, Sparkles, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Briefcase, Calendar, MapPin, Sparkles, CheckCircle2 } from "lucide-react";
 import { experiences } from "../data/experience";
 
 export default function Experience() {

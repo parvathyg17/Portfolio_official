@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 
 // UI Components
@@ -12,6 +12,7 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Architecture from "./components/Architecture";
 import Education from "./components/Education";
+import DsaSection from "./components/DsaSection";
 import CodingActivity from "./components/CodingActivity";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -20,6 +21,34 @@ import ResumeModal from "./components/ResumeModal";
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [resumeOpen, setResumeOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("portfolio-theme");
+      if (saved === "light" || saved === "dark") return saved;
+    }
+    return "dark";
+  });
+
+  // Keep <html> dark or light class in sync
+  React.useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "light") {
+      root.classList.remove("dark");
+      root.classList.add("light");
+    } else {
+      root.classList.remove("light");
+      root.classList.add("dark");
+    }
+    try {
+      localStorage.setItem("portfolio-theme", theme);
+    } catch {
+      // ignore
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   // Top progress bar tracking scroll depth
   const { scrollYProgress } = useScroll();
@@ -43,34 +72,43 @@ export default function App() {
         >
           {/* Top Scroll Indicator */}
           <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-violet-500 to-emerald-400 origin-left z-[100] shadow-glow-cyan"
-        style={{ scaleX }}
-      />
+            className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-violet-500 to-emerald-400 origin-left z-[100] shadow-glow-cyan"
+            style={{ scaleX }}
+          />
 
-      {/* Custom Mouse Cursor for Desktop */}
-      <CustomCursor />
+          {/* Custom Mouse Cursor for Desktop */}
+          <CustomCursor />
 
-      {/* Floating Glassmorphic Navbar */}
-      <Navbar onOpenResume={() => setResumeOpen(true)} />
+          {/* Floating Glassmorphic Navbar */}
+          <Navbar
+            theme={theme}
+            onToggleTheme={toggleTheme}
+            onOpenResume={() => setResumeOpen(true)}
+          />
 
-      {/* Main Content Sections */}
-      <main className="relative">
-        <Hero onOpenResume={() => setResumeOpen(true)} />
-        <About />
-        <Skills />
-        <Architecture />
-        <Experience />
-        <Projects />
-        <CodingActivity />
-        <Education />
-        <Contact />
-      </main>
+          {/* Main Content Sections */}
+          <main className="relative">
+            <Hero onOpenResume={() => setResumeOpen(true)} />
+            <About />
+            <Skills />
+            <Architecture />
+            <Experience />
+            <Projects />
+            <DsaSection />
+            <CodingActivity />
+            <Education />
+            <Contact />
+          </main>
 
-      {/* Footer */}
-      <Footer />
+          {/* Footer */}
+          <Footer />
 
-      {/* Resume Modal */}
-      <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
+          {/* Resume Modal */}
+          <ResumeModal
+            isOpen={resumeOpen}
+            onClose={() => setResumeOpen(false)}
+            currentTheme={theme}
+          />
         </motion.div>
       )}
     </div>

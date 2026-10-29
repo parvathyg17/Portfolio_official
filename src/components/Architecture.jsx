@@ -7,11 +7,8 @@ import {
   Server,
   Database,
   Cloud,
-  Cpu,
-  ShieldCheck,
   Zap,
   Sparkles,
-  GitPullRequest,
   CheckCircle2
 } from "lucide-react";
 
@@ -33,7 +30,7 @@ const pipelineSteps = [
   {
     step: "02",
     phase: "REST API Gateway",
-    tech: "Django REST Framework / Spring Boot",
+    tech: "Django REST Framework",
     role: "Contract & Security Gateway",
     summary: "Standardized RESTful HTTP endpoints with JWT bearer authentication, rate limiting, and input sanitization.",
     icon: Zap,
@@ -47,9 +44,9 @@ const pipelineSteps = [
   {
     step: "03",
     phase: "Backend Business Logic",
-    tech: "Python Services / Spring Data",
+    tech: "Python Services & Logic",
     role: "Core Execution & Workflows",
-    summary: "Clean architecture services isolating domain rules, asynchronous task processing, and payment webhooks.",
+    summary: "Clean architecture services isolating domain rules, transactional integrity, and payment workflows.",
     icon: Server,
     color: "#3b82f6",
     details: [
@@ -75,15 +72,15 @@ const pipelineSteps = [
   {
     step: "05",
     phase: "Cloud & Deployment",
-    tech: "AWS (EC2 / S3 / RDS) + Docker",
-    role: "Containerized Infrastructure",
-    summary: "Multi-stage Docker images orchestrated and deployed on AWS with continuous integration pipelines.",
+    tech: "AWS EC2 + Linux + Nginx",
+    role: "Server & Deployment Infrastructure",
+    summary: "Configured Linux server environments deployed on AWS EC2 with reverse proxy routing and continuous deployment.",
     icon: Cloud,
     color: "#f59e0b",
     details: [
-      "Lightweight multi-stage Docker builds",
-      "AWS S3 bucket asset storage",
-      "Automated CI/CD GitHub Actions pipelines"
+      "AWS EC2 cloud virtual instances",
+      "Nginx reverse proxy & static asset delivery",
+      "Git-based automated deployment workflows"
     ]
   }
 ];
@@ -138,13 +135,13 @@ export default function Architecture() {
           <span className="text-cyan-400 font-bold">React (SPA)</span>
           <ArrowRight className="w-4 h-4 text-slate-500 hidden sm:inline" />
           <ArrowDown className="w-4 h-4 text-slate-500 sm:hidden" />
-          <span className="text-violet-400 font-bold">Django REST / Spring Boot</span>
+          <span className="text-violet-400 font-bold">Django REST Framework</span>
           <ArrowRight className="w-4 h-4 text-slate-500 hidden sm:inline" />
           <ArrowDown className="w-4 h-4 text-slate-500 sm:hidden" />
           <span className="text-emerald-400 font-bold">PostgreSQL / MySQL</span>
           <ArrowRight className="w-4 h-4 text-slate-500 hidden sm:inline" />
           <ArrowDown className="w-4 h-4 text-slate-500 sm:hidden" />
-          <span className="text-amber-400 font-bold">AWS & Docker</span>
+          <span className="text-amber-400 font-bold">AWS EC2 & Linux</span>
         </motion.div>
 
         {/* Interactive Pipeline Steps */}

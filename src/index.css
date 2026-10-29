@@ -122,3 +122,200 @@
 .radial-glow-purple {
   background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
 }
+
+/* Light Mode Theme Overrides */
+html.light body,
+html.light .bg-dark-950 {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light .bg-dark-900,
+html.light .bg-dark-900\/40,
+html.light .bg-dark-900\/50,
+html.light .bg-dark-900\/60,
+html.light .bg-dark-900\/80,
+html.light .bg-dark-900\/90,
+html.light .bg-dark-900\/95,
+html.light .bg-dark-850 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(226, 232, 240, 0.95) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.07) !important;
+  color: #0f172a !important;
+}
+
+html.light .glass-panel-glow {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(6, 182, 212, 0.35) !important;
+  box-shadow: 0 12px 36px -10px rgba(6, 182, 212, 0.15) !important;
+  color: #0f172a !important;
+}
+
+html.light .glass-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(226, 232, 240, 0.95) !important;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .glass-card:hover {
+  background: #ffffff !important;
+  border-color: rgba(6, 182, 212, 0.4) !important;
+  box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.12) !important;
+}
+
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.light .text-cyan-400 {
+  color: #0891b2 !important;
+}
+
+html.light .text-cyan-300 {
+  color: #0284c7 !important;
+}
+
+html.light .cyber-badge {
+  background: rgba(6, 182, 212, 0.1) !important;
+  border-color: rgba(6, 182, 212, 0.4) !important;
+  color: #0891b2 !important;
+}
+
+html.light .bg-grid-cyber {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px) !important;
+}
+
+html.light .border-white\/5,
+html.light .border-white\/10 {
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+html.light .bg-white\/\[0\.02\],
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.04\],
+html.light .bg-white\/5 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+html.light .bg-dark-950\/80,
+html.light .bg-dark-950\/60 {
+  background-color: rgba(248, 250, 252, 0.88) !important;
+}
+
+html.light .text-gradient-cyan {
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #0891b2 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.light .text-gradient-purple {
+  background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 50%, #a855f7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Scoped CV Light Theme for Resume Modal Preview */
+.cv-light-theme {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.cv-light-theme .text-white {
+  color: #0f172a !important;
+}
+
+.cv-light-theme .text-slate-100,
+.cv-light-theme .text-slate-200 {
+  color: #1e293b !important;
+}
+
+.cv-light-theme .text-slate-300 {
+  color: #334155 !important;
+}
+
+.cv-light-theme .text-slate-400 {
+  color: #475569 !important;
+}
+
+.cv-light-theme .border-white\/10,
+.cv-light-theme .border-white\/5 {
+  border-color: #e2e8f0 !important;
+}
+
+.cv-light-theme .bg-white\/\[0\.02\],
+.cv-light-theme .bg-white\/\[0\.03\],
+.cv-light-theme .bg-white\/\[0\.04\],
+.cv-light-theme .bg-white\/5 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+.cv-light-theme .bg-amber-500\/\[0\.03\],
+.cv-light-theme .bg-amber-500\/\[0\.04\] {
+  background-color: rgba(245, 158, 11, 0.08) !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+.cv-light-theme .bg-cyan-500\/\[0\.03\],
+.cv-light-theme .bg-cyan-500\/\[0\.04\] {
+  background-color: rgba(6, 182, 212, 0.08) !important;
+  border-color: rgba(6, 182, 212, 0.3) !important;
+}
+
+.cv-light-theme .text-cyan-400 {
+  color: #0891b2 !important;
+}
+
+.cv-light-theme .text-cyan-300 {
+  color: #0284c7 !important;
+}
+
+.cv-light-theme .text-violet-400 {
+  color: #7c3aed !important;
+}
+
+.cv-light-theme .text-emerald-400 {
+  color: #059669 !important;
+}
+
+.cv-light-theme .text-amber-400 {
+  color: #d97706 !important;
+}
+
+.cv-light-theme .text-amber-300\/90 {
+  color: #b45309 !important;
+}
+
+.cv-light-theme .text-cyan-300\/90 {
+  color: #0e7490 !important;
+}

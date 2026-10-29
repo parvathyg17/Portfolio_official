@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, CheckCircle, Sparkles, Layers, ShieldCheck } from "lucide-react";
+import { X, ExternalLink, CheckCircle, Sparkles, Layers } from "lucide-react";
 import { Github } from "./Icons";
 
 export default function ProjectModal({ project, isOpen, onClose }) {
@@ -52,20 +52,40 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
           {/* Metrics */}
           {project.metrics && (
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-6">
+            <div className={`grid grid-cols-2 sm:grid-cols-3 ${project.metrics.length > 4 ? "lg:grid-cols-6" : "lg:grid-cols-4"} gap-2.5 my-6`}>
               {project.metrics.map((m) => (
                 <div
                   key={m.label}
                   className="p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center"
                 >
-                  <div className="text-[11px] font-mono text-slate-400">
+                  <div className="text-[10px] font-mono text-slate-400">
                     {m.label}
                   </div>
-                  <div className="text-xs sm:text-sm font-mono font-bold text-white mt-0.5">
+                  <div className="text-xs sm:text-sm font-mono font-bold text-white mt-0.5 truncate">
                     {m.value}
                   </div>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* Architecture Highlights */}
+          {project.architecture && (
+            <div className="my-6">
+              <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> System Architecture & Technical Highlights:
+              </h4>
+              <div className="space-y-2">
+                {project.architecture.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2.5 p-3 rounded-xl bg-cyan-500/[0.03] border border-cyan-500/20 text-xs text-slate-300"
+                  >
+                    <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
@@ -111,10 +131,22 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="px-5 py-2.5 rounded-xl font-mono text-xs font-medium glass-panel border border-white/10 hover:border-white/30 text-white flex items-center gap-2 transition-colors"
+                className="px-4 py-2.5 rounded-xl font-mono text-xs font-medium glass-panel border border-white/10 hover:border-white/30 text-white flex items-center gap-2 transition-colors"
               >
                 <Github className="w-4 h-4" />
-                <span>Source Code</span>
+                <span>Backend Source</span>
+              </a>
+            )}
+
+            {project.frontendGithubUrl && (
+              <a
+                href={project.frontendGithubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="px-4 py-2.5 rounded-xl font-mono text-xs font-medium glass-panel border border-white/10 hover:border-white/30 text-white flex items-center gap-2 transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                <span>Frontend Source</span>
               </a>
             )}
 

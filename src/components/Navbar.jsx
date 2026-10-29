@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Terminal, ArrowUpRight, Sparkles } from "lucide-react";
+import { Menu, X, ArrowUpRight, Sparkles, Sun, Moon, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import profilePic from "../assets/profile360.png";
 
@@ -14,7 +14,7 @@ const navLinks = [
   { name: "Contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onOpenResume, theme = "dark", onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -112,8 +112,36 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Action Buttons */}
+        <div className="hidden sm:flex items-center gap-2.5">
+          {/* Theme Toggle Button */}
+          {onToggleTheme && (
+            <button
+              onClick={onToggleTheme}
+              aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+              title={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+              className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition-colors flex items-center justify-center shadow-sm"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4 text-amber-400" />
+              ) : (
+                <Moon className="w-4 h-4 text-cyan-600" />
+              )}
+            </button>
+          )}
+
+          {/* Quick CV Button */}
+          {onOpenResume && (
+            <button
+              onClick={onOpenResume}
+              className="px-3 py-2 rounded-xl text-xs font-mono font-medium border border-white/10 bg-white/5 hover:bg-white/10 text-slate-200 transition-colors hidden md:flex items-center gap-1.5 hover:border-cyan-400/40"
+            >
+              <FileText className="w-3.5 h-3.5 text-cyan-400" />
+              <span>CV</span>
+            </button>
+          )}
+
+          {/* Contact CTA Button */}
           <a
             href="#contact"
             onClick={(e) => scrollToSection(e, "#contact")}
@@ -125,13 +153,28 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
-          aria-label="Toggle navigation menu"
-        >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          {onToggleTheme && (
+            <button
+              onClick={onToggleTheme}
+              aria-label="Toggle theme"
+              className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4 text-amber-400" />
+              ) : (
+                <Moon className="w-4 h-4 text-cyan-600" />
+              )}
+            </button>
+          )}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -176,10 +219,43 @@ export default function Navbar() {
             </div>
 
             <div className="pt-3 mt-1 border-t border-white/10 flex gap-2">
+              {onToggleTheme && (
+                <button
+                  onClick={onToggleTheme}
+                  className="flex-1 py-2.5 px-3 rounded-xl text-xs font-mono font-medium bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 flex items-center justify-center gap-2 transition-colors"
+                >
+                  {theme === "dark" ? (
+                    <>
+                      <Sun className="w-4 h-4 text-amber-400" />
+                      <span>Light Mode</span>
+                    </>
+                  ) : (
+                    <>
+                      <Moon className="w-4 h-4 text-cyan-500" />
+                      <span>Dark Mode</span>
+                    </>
+                  )}
+                </button>
+              )}
+              {onOpenResume && (
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenResume();
+                  }}
+                  className="flex-1 py-2.5 px-3 rounded-xl text-xs font-mono font-medium bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 flex items-center justify-center gap-2 transition-colors"
+                >
+                  <FileText className="w-4 h-4 text-cyan-400" />
+                  <span>View CV</span>
+                </button>
+              )}
+            </div>
+
+            <div className="pt-1">
               <a
                 href="#contact"
                 onClick={(e) => scrollToSection(e, "#contact")}
-                className="w-full text-center py-2.5 rounded-xl text-xs font-mono font-medium bg-gradient-to-r from-cyan-500 to-violet-600 text-white shadow-glow-cyan"
+                className="w-full block text-center py-2.5 rounded-xl text-xs font-mono font-medium bg-gradient-to-r from-cyan-500 to-violet-600 text-white shadow-glow-cyan"
               >
                 Contact Me
               </a>

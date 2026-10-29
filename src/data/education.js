@@ -1,34 +1,53 @@
 export const educationData = [
   {
-    degree: "Master of Computer Applications (MCA)",
-    institution: "Kerala Technological University (KTU)",
-    period: "2023 – 2025",
-    status: "Completed",
-    grade: "First Class with Distinction",
-    description: "Specialized in advanced software engineering, distributed database management, full-stack enterprise web development, algorithm design, and cloud architecture.",
+    degree: "Software Development Student",
+    institution: "Brototype / Brocamp",
+    period: "Oct 2025 – Present",
+    status: "Pursuing",
+    grade: "Full-Stack Web Development",
+    location: "Kerala, India",
+    description: "Pursuing intensive project-based training in Python, Django, DRF, React, PostgreSQL, and full-stack development. Developing practical applications and participating in coding assessments, technical evaluations, peer code reviews, and software architecture discussions.",
     courses: [
-      "Advanced Data Structures & Algorithms",
-      "Enterprise Web Technologies (Python & Java)",
-      "Database Management Systems & Optimization",
-      "Cloud Computing & Virtualization",
-      "Software Architecture & Design Patterns"
+      "Python & Django REST Framework",
+      "React & Redux Toolkit",
+      "PostgreSQL Relational Systems",
+      "System Architecture & API Design",
+      "DSA & Coding Assessments"
     ],
     accentColor: "#06b6d4"
+  },
+  {
+    degree: "Master of Computer Applications (MCA)",
+    institution: "APJ Abdul Kalam Technological University",
+    period: "2023 – 2025",
+    status: "Completed",
+    grade: "80%",
+    location: "Kerala, India",
+    description: "Specialized in advanced software engineering, distributed database management, full-stack web development, and algorithms.",
+    courses: [
+      "Data Structures & Algorithms",
+      "Web Technologies & Frameworks",
+      "Database Management Systems",
+      "Cloud Computing",
+      "Software Engineering"
+    ],
+    accentColor: "#8b5cf6"
   },
   {
     degree: "Bachelor of Computer Applications (BCA)",
     institution: "University of Kerala",
     period: "2020 – 2023",
     status: "Graduated",
-    grade: "First Class",
-    description: "Built rigorous foundational competence in computer science, object-oriented programming (Java, C++), relational database modeling, network protocols, and web development fundamentals.",
+    grade: "72%",
+    location: "Kerala, India",
+    description: "Built foundational competence in computer science, object-oriented programming, data structures, and relational databases.",
     courses: [
       "Object-Oriented Programming (Java/C++)",
       "Relational Database Management (SQL)",
-      "Web Technologies & Client Scripting",
-      "Operating Systems & Computer Networks",
-      "Software Engineering Methodologies"
+      "Web Technologies",
+      "Operating Systems & Networks",
+      "Software Development Fundamentals"
     ],
-    accentColor: "#8b5cf6"
+    accentColor: "#10b981"
   }
 ];

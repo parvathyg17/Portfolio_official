@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, ArrowRight, Download, Sparkles, Code, Terminal } from "lucide-react";
+import { Mail, ArrowRight, Download, Code, Terminal } from "lucide-react";
 import { Github, Linkedin } from "./Icons";
-import HeroScene from "./3d/HeroScene";
 import { personalInfo } from "../data/personal";
 import profilePic from "../assets/profile360.png";
 
@@ -67,8 +66,8 @@ export default function Hero({ onOpenResume }) {
               transition={{ delay: 0.3, duration: 0.7 }}
               className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.1]"
             >
-              Aspiring <br />
-              <span className="text-gradient-cyber">Software</span> Engineer
+              Python Developer <br />
+              <span className="text-gradient-cyber">Full-Stack</span> Developer
             </motion.h1>
           </div>
 
@@ -89,7 +88,7 @@ export default function Hero({ onOpenResume }) {
             transition={{ delay: 0.5, duration: 0.7 }}
             className="flex flex-wrap gap-2 pt-1"
           >
-            {["Django REST", "React 19", "Spring Boot", "PostgreSQL", "AWS"].map((tech) => (
+            {["Python", "Django", "React", "PostgreSQL", "REST APIs"].map((tech) => (
               <span
                 key={tech}
                 className="px-2.5 py-1 rounded-md text-xs font-mono text-slate-300 bg-white/[0.04] border border-white/10"

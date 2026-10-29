@@ -1,29 +1,33 @@
 export const experiences = [
   {
     company: "Wahy Lab",
-    role: "Java / Spring Boot Developer Intern",
-    period: "January 2025 – June 2025",
+    role: "Java Developer Intern",
+    period: "Jan 2025 – Jun 2025",
     type: "Internship",
     location: "Kerala, India",
-    description: "Worked with Java and Spring Boot, developing backend applications and REST APIs.",
-    technologies: ["Java", "Spring Boot", "REST APIs", "PostgreSQL"],
+    description: "Developed Java Spring Boot backend modules following Object-Oriented Programming principles and modular application design.",
+    technologies: ["Java", "Spring Boot", "REST APIs", "PostgreSQL", "Git"],
     highlights: [
-      "Gained hands-on experience in backend development.",
-      "Developed robust REST APIs and managed data persistence."
+      "Developed Java Spring Boot backend modules following Object-Oriented Programming principles and modular application design.",
+      "Built and integrated RESTful API endpoints for data processing, request validation, and application business logic.",
+      "Implemented PostgreSQL CRUD operations and database integration, supporting reliable data persistence across backend services.",
+      "Performed API testing, debugging, and maintenance using Git-based development workflows."
     ],
     accentColor: "#8b5cf6"
   },
   {
     company: "Syneffo Lab Solutions",
-    role: "Python Developer Intern",
-    period: "March 2023 – December 2023",
+    role: "Python Full Stack Developer Intern",
+    period: "Mar 2023 – Dec 2023",
     type: "Internship",
     location: "Kerala, India",
-    description: "Worked with Python-based web development and gained practical experience in backend and full-stack development.",
-    technologies: ["Python", "Django", "React", "PostgreSQL", "REST APIs"],
+    description: "Developed web application features using Python, Django, Django REST Framework, React, JavaScript, HTML, and CSS.",
+    technologies: ["Python", "Django", "Django REST Framework", "React", "PostgreSQL", "REST APIs"],
     highlights: [
-      "Gained practical experience in full-stack web development.",
-      "Worked on integrating backend functionality with user interfaces."
+      "Developed web application features using Python, Django, Django REST Framework, React, JavaScript, HTML, and CSS.",
+      "Implemented REST APIs with CRUD functionality, request validation, business logic, and JSON responses.",
+      "Designed relational database models and queries using Django ORM for application data management.",
+      "Integrated React components with Django APIs and supported functional testing and debugging."
     ],
     accentColor: "#06b6d4"
   }
