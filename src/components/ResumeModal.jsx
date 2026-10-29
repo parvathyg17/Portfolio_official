@@ -146,7 +146,7 @@ export default function ResumeModal({ isOpen, onClose, currentTheme = "dark" }) 
                     <span>GitHub</span>
                   </a>
                   <a
-                    href="https://portfolio-official-ytxm-gold.vercel.app/"
+                    href={personalInfo.portfolioUrl || "https://www.parvathi.online"}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-1 text-slate-300 hover:text-cyan-400 transition-colors"

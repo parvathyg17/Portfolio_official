@@ -10,6 +10,7 @@ export const personalInfo = {
   github: "https://github.com/parvathyg17",
   linkedin: "https://www.linkedin.com/in/parvathi-g-609581253/",
   leetcode: "https://leetcode.com/u/parvathig17/",
+  portfolioUrl: "https://www.parvathi.online",
   resumeUrl: "#contact",
   stats: [
     { label: "Specialization", value: "Python", unit: "Developer", description: "Backend & Web Systems" },
