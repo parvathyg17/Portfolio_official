@@ -40,7 +40,7 @@ export const personalInfo = {
       icon: "Cpu"
     }
   ],
-  cvSummary: "MCA graduate specializing in Python backend and full-stack development with practical experience in Django, Django REST Framework, React, PostgreSQL, and RESTful API development. Built and deployed FurniCart, a full-stack e-commerce platform featuring JWT authentication, Razorpay payment integration, inventory management, and administrative analytics. Experienced with AWS EC2, Nginx, Gunicorn, and Linux deployment. Strong foundation in Data Structures, Algorithms, OOP, database design, and debugging. Seeking Python Backend Developer, Django Developer, or Full Stack Developer opportunities in the UAE.",
+  cvSummary: "MCA graduate specializing in Python backend and full-stack development with practical experience in Django, Django REST Framework, React, PostgreSQL, and RESTful API development. Built and deployed FurniCart, a full-stack e-commerce platform featuring JWT authentication, Razorpay payment integration, inventory management, and administrative analytics. Experienced with AWS EC2, Nginx, Gunicorn, and Linux deployment. Strong foundation in Data Structures, Algorithms, OOP, database design, and debugging.",
   cvSkills: {
     programming: "Python, JavaScript, SQL, C++",
     backend: "Django, Django REST Framework, Java, Spring Boot, RESTful APIs, Django ORM",
